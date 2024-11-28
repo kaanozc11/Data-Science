@@ -51,9 +51,25 @@ sns.boxplot(y="heart-disease",
 #find the Pearson cor. matrix. Then interpret the result.8
 
 
-x = heart.slope
-y=heart.oldpeak
 
-plt.scatter(x,y)
-plt.xlabel = "Slope"
-plt.ylabel = "Oldpeak"
+
+plt.scatter(x="slope",y="oldpeak",data=heart)
+plt.xlabel("slope")
+plt.ylabel("oldpeak")
+
+plt.scatter(x="major-vessels", y="thal", data=heart)
+
+plt.scatter(x="rest-bp", y="serum-chol", data=heart)
+plt.xlabel("Rest-BP")
+plt.ylabel("SerumChol")
+
+#chest pain 4 olanları verisetine ata
+
+heart["chest-pain"] = heart["chest-pain"].astype("int64")
+
+heart.iloc[heart["chest-pain"] == 4]
+
+
+d2 = heart.loc(pd.,snull(heart["chest-pain"]))
+
+#sex = 1, angina = 0, max-heart-rate > 120, heart-disease = "absence"
